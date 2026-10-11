@@ -1,0 +1,12 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Window event listening, hiding, and resizing for Spotlight Search",
+  "windows": ["main"],
+  "permissions": [
+    "core:event:allow-listen",
+    "core:window:allow-hide",
+    "core:window:allow-is-visible",
+    "core:window:allow-set-size"
+  ]
+}

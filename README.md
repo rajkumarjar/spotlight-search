@@ -13,7 +13,7 @@ A fast, local-first Windows launcher inspired by macOS Spotlight. Press a global
 
 ## Download and install
 
-Run the included [Spotlight Search setup installer](./release/Spotlight-Search-Setup.exe), or download the latest setup `.exe` from the repository's GitHub Releases page. The NSIS installer installs for the current Windows user and does not require administrator access.
+Run the included [Spotlight Search setup installer](./release/Spotlight-Search-Setup.exe), or download the latest setup `.exe` from the repository's GitHub Releases page. The NSIS installer installs for the current Windows user and does not require administrator access. It registers Spotlight Search to start in the background when you sign in to Windows; uninstalling removes this startup entry.
 
 The installer is generated at:
 
@@ -88,6 +88,7 @@ The installer `.exe` is placed under `src-tauri/target/release/bundle/nsis/`. Bu
 ## Troubleshooting
 
 - **Win+Space does not open the launcher:** Windows may own the shortcut. Try **Ctrl+Space** or change the conflicting Windows input-language shortcut.
+- **Spotlight Search does not start after signing in:** Confirm it is enabled in **Task Manager → Startup apps** or **Settings → Apps → Startup**. The app remains running in the background while Windows sleeps.
 - **No files or folders appear:** Confirm Windows Search is running and that the desired folders/file types are indexed. The project does not crawl the entire disk as a fallback.
 - **The installer reports a missing WebView:** Install the current Microsoft Edge WebView2 Runtime, then run the installer again.
 - **SmartScreen warns about the installer:** Releases are currently unsigned. Verify that the installer came from this repository's Releases page; code signing is not configured.
